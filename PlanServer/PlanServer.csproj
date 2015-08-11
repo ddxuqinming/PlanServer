@@ -85,6 +85,7 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="myApp.cs" />
+    <Compile Include="newClass.cs" />
     <Compile Include="PlanBase.cs" />
     <Compile Include="PlanBusiness\Plan_K3Lock.cs" />
     <Compile Include="PlanUI.cs">

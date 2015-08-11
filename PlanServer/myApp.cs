@@ -4,6 +4,9 @@ using System.Text;
 
 namespace PlanServer
 {
+    /// <summary>
+    /// 修改测试
+    /// </summary>
     public  static class myApp
     {
 
@@ -18,6 +21,8 @@ namespace PlanServer
         }
         public static int ConvertToInt( object  s)
         {
+            //dd
+            int t;
             if (s == null )
                 return 0;
 
@@ -31,6 +36,23 @@ namespace PlanServer
             return 0;
             
         
+        }
+
+        public static int ConvertToInt2(object s)
+        {
+            if (s == null)
+                return 0;
+
+            if (s == DBNull.Value)
+                return 0;
+            if (s.ToString() == "")
+                return 0;
+            int rt;
+            if (int.TryParse(s.ToString(), out rt))
+                return rt;
+            return 0;
+
+
         }
     }
 
