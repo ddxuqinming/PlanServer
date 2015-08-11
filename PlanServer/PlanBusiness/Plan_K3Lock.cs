@@ -11,6 +11,7 @@ namespace PlanServer
     {
         public   Plan_K3Lock()
         {
+            //tes
             this._id = "Plan_K3Lock";
             this.Name = "K3材料锁库";
         }
