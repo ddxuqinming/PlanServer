@@ -13,7 +13,8 @@ namespace PlanServer
         public frmMain()
         {
             InitializeComponent();
-          
+            CheckForIllegalCrossThreadCalls = false; // 解决定时器线程间操作无效: 从不是创建控件“”的线程访问它~~~的解决方法~ 
+            this.tsTime.Text ="登陆时间：" +  DateTime.Now.ToString();
          
            
         }
@@ -22,6 +23,7 @@ namespace PlanServer
         {
             if (MessageBox.Show("确定要关闭吗?", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                this.Close();
                 System.Environment.Exit(0);   //彻底退出
             }
 
@@ -35,7 +37,8 @@ namespace PlanServer
             ui.Plan = new Plan_K3Lock();
             ui.SetupClick  += new PlanUI.SetupClickEvent (PlanUI_SetupClick) ;
             this.pnlMain.Controls.Add(ui);
-            
+            ui.Run();
+            this.tsbCount.Text = "共1个作业计划";
         
         
         }

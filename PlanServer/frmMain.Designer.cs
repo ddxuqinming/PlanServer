@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlMain = new System.Windows.Forms.Panel();
+            this.tsTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsbCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -49,16 +52,21 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsTime,
+            this.tsbCount});
             this.statusStrip1.Location = new System.Drawing.Point(0, 311);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(618, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripMenuItem1
+            // pnlMain
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.pnlMain.Location = new System.Drawing.Point(24, 42);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(510, 234);
+            this.pnlMain.TabIndex = 2;
             // 
             // 退出ToolStripMenuItem
             // 
@@ -70,18 +78,23 @@
             // 文件ToolStripMenuItem
             // 
             this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
             this.退出ToolStripMenuItem});
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.文件ToolStripMenuItem.Text = "文件";
+            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.文件ToolStripMenuItem.Text = "文件(&F)";
             // 
-            // pnlMain
+            // tsTime
             // 
-            this.pnlMain.Location = new System.Drawing.Point(24, 42);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(510, 234);
-            this.pnlMain.TabIndex = 2;
+            this.tsTime.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.tsTime.Name = "tsTime";
+            this.tsTime.Size = new System.Drawing.Size(135, 17);
+            this.tsTime.Text = "toolStripStatusLabel1";
+            // 
+            // tsbCount
+            // 
+            this.tsbCount.Name = "tsbCount";
+            this.tsbCount.Size = new System.Drawing.Size(131, 17);
+            this.tsbCount.Text = "toolStripStatusLabel2";
             // 
             // frmMain
             // 
@@ -91,12 +104,16 @@
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "华荣业务定时器";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,10 +123,11 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 文件ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.ToolStripMenuItem 文件ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel tsTime;
+        private System.Windows.Forms.ToolStripStatusLabel tsbCount;
     }
 }
 

@@ -30,6 +30,7 @@
         {
             this.LabName = new System.Windows.Forms.Label();
             this.lnkSetup = new System.Windows.Forms.LinkLabel();
+            this.labCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LabName
@@ -52,15 +53,26 @@
             this.lnkSetup.Text = "设置";
             this.lnkSetup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSetup_LinkClicked);
             // 
+            // labCount
+            // 
+            this.labCount.AutoSize = true;
+            this.labCount.Location = new System.Drawing.Point(24, 89);
+            this.labCount.Name = "labCount";
+            this.labCount.Size = new System.Drawing.Size(41, 12);
+            this.labCount.TabIndex = 2;
+            this.labCount.Text = "label1";
+            // 
             // PlanUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.labCount);
             this.Controls.Add(this.lnkSetup);
             this.Controls.Add(this.LabName);
             this.Name = "PlanUI";
-            this.Size = new System.Drawing.Size(270, 117);
+            this.Size = new System.Drawing.Size(268, 115);
             this.Load += new System.EventHandler(this.PlanUI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -71,5 +83,6 @@
 
         private System.Windows.Forms.LinkLabel lnkSetup;
         public System.Windows.Forms.Label LabName;
+        private System.Windows.Forms.Label labCount;
     }
 }

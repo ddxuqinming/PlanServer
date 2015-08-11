@@ -49,8 +49,9 @@ namespace PlanServer
         /// <summary>
         /// 执行
         /// </summary>
-        public  virtual void  Execute()
+        public  virtual   bool   Execute()
         {
+            return true;
         }
         
 
