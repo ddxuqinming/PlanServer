@@ -46,11 +46,12 @@ namespace PlanServer
             sun.Common.Functions.XML.WriteIniToXml("sqlserver", "db2", drpDB2.Text, file);
              //
             sun.Common.Functions.XML.WriteIniToXml ("pram", "time", drpTime.Text ,file);
+            sun.Common.Functions.XML.WriteIniToXml("pram", "stop", chkStop.Checked.ToString(), file);
         }
 
         private void frmConfig_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 30; i++)
+            for (int i = 1; i < 30; i++)
             {
                 this.drpTime.Items.Add(i);
                 
@@ -73,6 +74,7 @@ namespace PlanServer
 
             //
             drpTime.Text = sun.Common.Functions.XML.ReadInifromXml("pram", "time", file);
+            chkStop.Checked  = sun.Common.Functions.Type.ConvertToBoolean ( sun.Common.Functions.XML.ReadInifromXml("pram", "stop", file));
             this.ShowDialog();
             return mOK;
         }

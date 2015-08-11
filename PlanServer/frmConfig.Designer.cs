@@ -54,6 +54,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.chkStop = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.chkStop);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
@@ -314,6 +316,16 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // chkStop
+            // 
+            this.chkStop.AutoSize = true;
+            this.chkStop.Location = new System.Drawing.Point(8, 258);
+            this.chkStop.Name = "chkStop";
+            this.chkStop.Size = new System.Drawing.Size(48, 16);
+            this.chkStop.TabIndex = 3;
+            this.chkStop.Text = "停用";
+            this.chkStop.UseVisualStyleBackColor = true;
+            // 
             // frmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -327,6 +339,7 @@
             this.Load += new System.EventHandler(this.frmConfig_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -365,5 +378,6 @@
         private System.Windows.Forms.TextBox txtUser2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPwd2;
+        private System.Windows.Forms.CheckBox chkStop;
     }
 }

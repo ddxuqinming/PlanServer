@@ -13,14 +13,14 @@ namespace PlanServer
         protected  string  _id;
         public String ID { get { return _id; }  }
         public String Name   { get; set; }
-
-     
+        public  int  Time { get; set; }
+        public bool Stop { get; set; }
         public  myApp.ConnectionStruct K3DBCfg { get; set; }
         public myApp.ConnectionStruct  PTDBCfg { get; set; }
         /// <summary>
         /// 定时间隔,单位分钟
         /// </summary>
-        public  int  Time { get; set; }
+      
 
       /// <summary>
       /// 读取配置
@@ -43,7 +43,8 @@ namespace PlanServer
                 cfg2.Db = sun.Common.Functions.XML.ReadInifromXml("sqlserver", "db2", file);
                 this.PTDBCfg  = cfg2;
              //
-                 this.Time  =myApp.ConvertToInt ( sun.Common.Functions.XML.ReadInifromXml("pram", "time", file));
+                this.Time  =myApp.ConvertToInt ( sun.Common.Functions.XML.ReadInifromXml("pram", "time", file));
+                this.Stop = sun.Common.Functions.Type.ConvertToBoolean(sun.Common.Functions.XML.ReadInifromXml("pram", "stop", file));
             
         }
         /// <summary>

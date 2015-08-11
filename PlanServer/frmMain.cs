@@ -29,6 +29,11 @@ namespace PlanServer
 
 
         }
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            LoadPlan();
+             
+        }
 
         private void LoadPlan()
         {
@@ -48,15 +53,11 @@ namespace PlanServer
             frm.Text = ((PlanUI)sender).Plan.Name ;
             if (frm.ShowConfig(id)) 
             {
-                ((PlanUI)sender).Plan.ReadConfig();
+                ((PlanUI)sender).Refresh();
             
             }
         }
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            LoadPlan();
-        }
-
+      
       
 
     }
