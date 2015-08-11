@@ -1,0 +1,407 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+sun.DataProvider
+</name>
+</assembly>
+<members>
+<member name="M:sun.DataProvider.TableSchema.getFieldPrefix(System.String)">
+	<summary>
+ 字段的前缀,日期、文本前要加单引号'，数值就不需要
+ </summary>
+	<param name="Column"></param>
+	<returns></returns>
+	<remarks>如： 地址='浙江省温州市' ,金额=675.8</remarks>
+</member><member name="P:sun.DataProvider.TableSchema.AutoIncrementColumn">
+	<summary>
+ 取的表的自动递增列
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:sun.DataProvider.TableSchema.PrimaryKeysColumn">
+	<summary>
+ 表的键列
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.TableSchema.getRowColumnSchema(System.Int32)">
+	<summary>
+ tableSchema的Row对应的ColumnSchema
+ </summary>
+	<param name="row"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:sun.DataProvider.DataAccessLog.WebFloder">
+	<summary>
+ 程序物理文件夹 
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:sun.DataProvider.DataAccessLog">
+	<summary>
+ DataAccess监控日志
+ </summary>
+	<remarks></remarks>
+</member><member name="F:sun.DataProvider.DataAccess.CONFIG_Monitor">
+	<summary>
+ 是否启用连接池监控,0不监控,1Monitors方式,2日志文件方式(d:\DataAccessLog.txt)
+ </summary>
+	<remarks></remarks>
+</member><member name="P:sun.DataProvider.DataAccess.Monitors">
+	<summary>
+ 连接监视器
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:sun.DataProvider.DataAccess.Timeout">
+	<summary>
+ 设置查询超时时间，单位秒
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:sun.DataProvider.DataAccess.AppXuDb">
+	<summary>
+ App应用程序控制中心的数据库连接
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.CreateSPCommand(System.String)">
+	<summary>
+ 创建存储过程命令
+ </summary>
+	<param name="procedureName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.ConvertSQLServerDataType(System.String)">
+	<summary>
+ 把SQL Server 的数据类型名称转换为SqlDbType
+ </summary>
+	<param name="dataTypeName">如datetime、int、float</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.Close">
+	<summary>
+ 关闭数据库连接和AppXuDb的数据库连接
+ </summary>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.InitCommandAttr(System.Data.Common.DbCommand@)">
+	<summary>
+ 初始化命令属性
+ </summary>
+	<param name="cmd"></param>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.ExeSql(System.String)">
+	<summary>
+ 对于 UPDATE、INSERT 和 DELETE 语句，返回值为该命令所影响的行数。对于所有其他类型的语句，返回值为 -1。如果发生回滚，返回值也为 -1
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.ExeSqlBatch(System.String)">
+	<summary>
+批量执行sql, 第一次执行时创建DbCommand,后面的sql不会再创建DbCommand。对于 UPDATE、INSERT 和 DELETE 语句，返回值为该命令所影响的行数。对于所有其他类型的语句，返回值为 -1。如果发生回滚，返回值也为 -1
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks>第一次执行时创建DbCommand,后面的sql不会再创建DbCommand</remarks>
+</member><member name="M:sun.DataProvider.DataAccess.ExeSql(System.Data.Common.DbCommand)">
+	<summary>
+ 对于 UPDATE、INSERT 和 DELETE 语句，返回值为该命令所影响的行数。对于所有其他类型的语句，返回值为 -1。如果发生回滚，返回值也为 -1
+ </summary>
+	<param name="execCommand"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.ExecuteScalar(System.String)">
+	<summary>
+ 返回第一行第一列,无数据行返回nothing。注意如果是max()函数，如果没有记录都返回null,而不是Nothing 
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.ExecuteScalarBatch(System.String)">
+	<summary>
+ 批量执行sql, 第一次执行时创建DbCommand。返回第一行第一列,无数据行返回nothing。注意如果是max()函数，如果没有记录都返回null,而不是Nothing 
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.ExecuteScalar(System.Data.Common.DbCommand)">
+	<summary>
+ ExecuteScalar  返回第一行第一列,如果是插入命令，返回自动递增值
+ </summary>
+	<param name="execCommand"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.ExecuteReader(System.String)">
+	<summary>
+执行ExecuteReader。第一次执行时创建DbCommand
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.isExist(System.String)">
+	<summary>
+ 判断记录是否存在,第一次执行时创建DbCommand
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getOneRowValues(System.String)">
+	<summary>
+ 返回单行数据,如果有数据定位在第一行,无数据行返回nothing
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getOneRowHashtable(System.String)">
+	<summary>
+ 返回单行数据,如果有数据定位在第一行,无数据行返回nothing
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getDataTable(System.String,System.String,sun.DataProvider.TableSchema@)">
+	<summary>
+ 返回表数据
+ </summary>
+	<param name="sql"></param>
+	<param name="tableName"></param>
+	<param name="tableSchema">表结构</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getDataList(System.String)">
+	<summary>
+ 返回第一个字段的值列表
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getDataListToString(System.String)">
+	<summary>
+ 返回第一个字段的值的字符串，如 1,45,23 或 空
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getDataListString(System.String)">
+	<summary>
+ 返回第一个字段的值列表 String类型
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getDataListInteger(System.String)">
+	<summary>
+ 返回第一个字段的值列表 Integer类型
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getDataArrayList(System.String)">
+	<summary>
+ 返回第一个字段的值列表
+ </summary>
+	<param name="Sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.SumbitTableToDB(System.Data.DataTable,System.String,System.String,System.Boolean)">
+	<summary>
+ 提交表的数据到库,如果acceptChanges=true调用后DataRow的状态改为Unchanged。如果有自动递增列，请设置该列AutoIncrement=true
+ </summary>
+	<param name="dataTable"></param>
+	<param name="tableName"></param>
+	<param name="selectFields">要更新的列，一定要包括主键字段。如 FID,FName,FAge</param>
+	<param name="acceptChanges">调用后是否自动把DataRow的状态改为Unchanged,否则, DataRow 的状态保持不变（如果有自动递增列，并且UpdatedRowSource = FirstReturnedRecord则,Added的行会变为Modified状态）</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.SetCommandParameterScale(System.Data.Common.DbCommand@)">
+	<summary>
+ 设置命令小数位数，使之按四舍五入方式，不按截断方式
+ </summary>
+	<param name="Command"></param>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.OnRowUpdated(System.Object,System.Data.DataRowChangeEventArgs)">
+	<summary>
+ OLEDB中取得自动编号列
+ </summary>
+	<param name="sender"></param>
+	<param name="args"></param>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.SaveTable(System.Data.DataTable,System.String,System.String[],System.String[])">
+	<summary>
+ 保存dataTable到数据库。rowState不会改变
+ </summary>
+	<param name="dataTable"></param>
+	<param name="tableName"></param>
+	<param name="sumbitFields">要更新列,可以不包括主键字段</param>
+	<param name="keyFields">手工指定的关键列</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.SqlBulkCopy(System.Data.DataTable,System.String,System.Int32)">
+	<summary>
+ 采用SqlBulkCopy方式插入数据（高性能）,把 Unchanged、Added 和 Modified 行复制到服务器,rowState=deleted的不会插入。
+ 注意：dataTable中的每个字段在数据库都要存在
+ </summary>
+	<param name="dataTable"></param>
+	<param name="tableName"></param>
+	<param name="batchSize"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getDatabaseNameList">
+	<summary>
+ 获取数据库名称,字段 database_Name
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getTableViewList">
+	<summary>
+ 获取数据库表和视图,字段:TABLE_NAME ,TABLE_TYPE('VIEW' 和 'BASE TABLE')
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getViewList">
+	<summary>
+  获取数据库视图,字段:TABLE_NAME
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getTableColumnList(System.String,System.Boolean)">
+	<summary>
+ 获取数据库表、视图的列,字段: COLUMN_NAME
+ </summary>
+	<param name="tableName"></param>
+	<param name="orgPosition">是否按原始顺序输出，默认按字段名称排序</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getSqlServerTableSchemaInformation3(System.String)">
+	<summary>
+ 返回Sql Server数据库的表信息，如果tableName为空，返回所有表。
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getOPENROWSETString(System.String,System.String,System.String,System.String)">
+	<summary>
+返回OPENROWSET子查询语句，如 OPENROWSET('SQLOLEDB','222.222.23.109';'sa';'pwd',  'SELECT * FROM waromApp..uHrmSubCompany ') 。
+  应用例子：SELECT t1.* FROM   OPENROWSET('SQLOLEDB','222.222.23.109';'sa';'pwd',  'SELECT * FROM waromApp..uHrmSubCompany ') t1
+ </summary>
+	<param name="server"></param>
+	<param name="userID"></param>
+	<param name="password">在远程查询的sql</param>
+	<param name="sql"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.DataAccess.getOPENDATASOURCEString(System.String,System.String,System.String,System.String)">
+	<summary>
+ 返回OPENDATASOURCE 子查询语句，如 OPENDATASOURCE( 'SQLOLEDB ','Data Source=222.222.23.109;User ID=sa;Password=pwd').waromApp 。
+ 应用例子：SELECT t1.* FROM   OPENDATASOURCE( 'SQLOLEDB ', 'Data Source=222.222.23.109;User ID=sa;Password=pwd').waromApp.dbo.stock t1
+ </summary>
+	<param name="server"></param>
+	<param name="userID"></param>
+	<param name="password"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:sun.DataProvider.My.Resources.Resources.ResourceManager">
+	<summary>
+  返回此类使用的缓存 ResourceManager 实例。
+</summary>
+</member><member name="P:sun.DataProvider.My.Resources.Resources.Culture">
+	<summary>
+  为使用此强类型资源类的所有资源查找
+  重写当前线程的 CurrentUICulture 属性。
+</summary>
+</member><member name="T:sun.DataProvider.My.Resources.Resources">
+	<summary>
+  强类型资源类，用于查找本地化字符串等。
+</summary>
+</member><member name="M:sun.DataProvider.CommandBuilder.CreateInsertCommand(sun.Common.KeyValueList,System.String[],System.Boolean)">
+	<summary>
+ 根据fieldValue对象生成插入命令 
+ </summary>
+	<param name="fieldValue"></param>
+	<param name="updateFields">要插入或不插入的字段，如果为空插入全部列。不用指定自动递增字段。</param>
+	<param name="isNotUpdate">false表示只更新updateFields中的列,true表示不更新updateFields中的列。</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.CommandBuilder.CreateInsertCommand(System.Data.DataRow,System.String[],System.Boolean)">
+	<summary>
+ 根据dataRow生成插入命令 
+ </summary>
+	<param name="itemDataRow"></param>
+	<param name="updateFields">要插入或不插入的字段，如果为空插入全部列。不用指定自动递增字段。</param>
+	<param name="isNotUpdate">false表示只更新updateFields中的列,true表示不更新updateFields中的列。</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.CommandBuilder.CreateInsertCommand(System.Data.DataTable,System.String[],System.Boolean)">
+	<summary>
+ 根据dataTable生成插入命令,命令参数值默认为 DBNull.Value
+ </summary>
+	<param name="dataTable"></param>
+	<param name="updateFields">要插入或不插入的字段，如果为空插入全部列。不用指定自动递增字段。</param>
+	<param name="isNotUpdate">false表示只更新updateFields中的列,true表示不更新updateFields中的列。</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.CommandBuilder.CreateUpdateCommand(System.Data.DataRow,System.String[],System.Collections.Generic.List{System.String},System.Boolean)">
+	<summary>
+ 生成更新命令
+ </summary>
+	<param name="modifiedDataRow"></param>
+	<param name="updateFields">要修改或不修改的字段，如果为空更新全部列。</param>
+	<param name="isNotUpdate">false表示只更新updateFields中的列,true表示不更新updateFields中的列。</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.CommandBuilder.CreateUpdateCommand(System.Data.DataRow,System.Collections.Generic.List{System.String})">
+	<summary>
+ 自动产生修改命令
+ </summary>
+	<param name="modifiedDataRow"></param>
+	<param name="keyField">手工指定更新where关键列</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.CommandBuilder.CreateUpdateCommand(System.Data.DataTable,System.String[],System.Collections.Generic.List{System.String},System.Boolean)">
+	<summary>
+ 根据dataTable生成更新命令，参数值为DBNull.Value
+ </summary>
+	<param name="dataTable"></param>
+	<param name="updateFields">要修改或不修改的字段，如果为空更新全部列。。</param>
+	<param name="keyField">手工指定更新where关键列</param>
+	<param name="isNotUpdate">false表示只更新updateFields中的列,true表示不更新updateFields中的列。</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.CommandBuilder.CreateDeleteCommand(System.Data.DataRow,System.Collections.Generic.List{System.String})">
+	<summary>
+  自动产生删除命令
+ </summary>
+	<param name="deletedDataRow"></param>
+	<param name="keyField">手工指定更新关键列</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.CommandBuilder.CreateDeleteCommand(System.Data.DataTable,System.Collections.Generic.List{System.String})">
+	<summary>
+ 根据dataTable生成删除命令，参数值为DbNull
+ </summary>
+	<param name="dataTable"></param>
+	<param name="keyField">手工指定删除关键列</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:sun.DataProvider.CommandBuilder.SetCommnadParametersValue(System.Data.Common.DbCommand@,System.Data.DataRow@)">
+	<summary>
+ 给命令设置参数值
+ </summary>
+	<param name="command"></param>
+	<param name="dataRow">设置值的数据行</param>
+	<remarks></remarks>
+</member><member name="T:sun.DataProvider.CommandBuilder">
+	<summary>
+ 根据表名自动创建命令，如果是插入命令，自动创建并且返回自动递增列的值
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>
